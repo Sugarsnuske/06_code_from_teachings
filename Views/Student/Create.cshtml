@@ -1,23 +1,33 @@
 @model ConsoleApplication.Models.Student
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Create Student</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     </head>
     <body>
     <h1>Create Student</h1>
     <form action="/Student/Create/" method="POST">
-        <input asp-for="StudentID" >
+        
+        <label asp-for="StudentID"></label>
+        <input asp-for="StudentID" placeholder="Student ID">
         <label asp-validation=""></label>
-        <input asp-for="FirstName">
+        
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" placeholder="First Name">
 
         <label asp-for="LastName"></label>
-        <input asp-for="LastName" >
-        <input asp-for="EnrollmenDate">
+        <input asp-for="LastName" placeholder="Last Name">
+        
+        <label asp-for="Age"></label>
+        <input asp-for="Age" placeholder="Age">
+
+        <label asp-for="EnrollmenDate"></label>
+        <input asp-for="EnrollmenDate" placeholder="Date">
+
         <input type="Submit" value="Send">
     </form>
     </body>

@@ -10,29 +10,32 @@
     </head>
     <body class="container">
     <h1 class="jumbotron">Students</h1>
-    <button  type="button" class="btn btn-success" style="margin-bottom: 15px;">New Student</button>
+    <a class="btn btn-success" style="margin-bottom: 15px;" asp-controller="Student" asp-action="Create">New Student</a>
     
     <table class="table table-hover table-striped table-condensed">
         <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Enrollment date</th>
-            <th>Age</th>
-            <th>Enrollments</th>
+            <thead>
+                <th> @Html.DisplayNameFor(model => model.StudentID)</th>
+                <th> @Html.DisplayNameFor(model => model.FirstName)</th>
+                <th>@Html.DisplayNameFor(model => model.LastName)</th>
+                <th>@Html.DisplayNameFor(model => model.EnrollmenDate)</th>
+                <th>@Html.DisplayNameFor(model => model.Age)</th>
+                <th>Enrollments</th>
+            </thead>
         </tr>
             @foreach(var st in Model)
         {
             <tr>
+                <td>@st.StudentID</td>
                 <td>@st.FirstName</td>
                 <td>@st.LastName</td>
                 <td>@st.EnrollmenDate</td>
                 <td>@st.Age</td>
                 <td>
-                    <button class="btn btn-primary" type="submit">Edit</button>
-                    <button class="btn btn-danger" type="submit">Delete</button>
-                    <button class="btn btn-info" type="submit">Details</button>
+                    <a class="btn btn-primary" asp-action="Student" asp-action="Update">Edit</a>
+                    <a class="btn btn-danger" asp-action="Student" asp-action="Delete">Edit</a>
+                    <a class="btn btn-info" asp-action="Student" asp-action="View">Details</a>
                 </td>
-                
             </tr>
         }
     </table>
